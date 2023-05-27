@@ -85,6 +85,8 @@ resources:
     service-plan: hdi-shared
 - name: cap_demoproject-destination-service
   type: org.cloudfoundry.managed-service
+  requires:
+    - name: srv-api
   parameters:
     config:
       HTML5Runtime_enabled: true
@@ -96,6 +98,13 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+          - Authentication: NoAuthentication
+            Name: capdemoproject-srv-api
+            ProxyType: Internet
+            Type: HTTP
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            URL: ~{srv-api/srv-url}
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
