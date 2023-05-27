@@ -25,6 +25,21 @@
                     "odataVersion": "2.0"
                 }
             }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "intent1": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "CAPMDemo",
+                    "action": "display",
+                    "title": "Demo Project",
+                    "subTitle": "CAPM Demo App",
+                    "icon": "sap-icon://visits"
+                }
+            }
         }
     },
     "sap.ui": {
