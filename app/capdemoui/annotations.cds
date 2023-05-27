@@ -7,24 +7,32 @@ annotate CatalogService.Books with @(UI: {
     ],
     LineItem       : [
         {
-            Label: 'ID',
+            Label: ID,
             Value: ID
         },
         {
-            Label: 'Title',
+            Label: title,
             Value: title
         },
         {
-            Label: 'Author',
+            Label: author,
             Value: author
         },
         {
-            Label: 'Price',
+            Label: price,
             Value: price
         },
         {
-            Label: 'Stock',
+            Label: stock,
             Value: stock
         }
     ],
 });
+
+annotate CatalogService.Books with {
+    ID     @(title: '{i18n>ID}');
+    title  @(title: '{i18n>title}');
+    author @(title: '{i18n>author}');
+    price  @(title: '{i18n>price}');
+    stock  @(title: '{i18n>stock}');
+};

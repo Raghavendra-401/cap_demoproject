@@ -1,7 +1,17 @@
 <mvc:View controllerName="cap.demo.capdemoui.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:html="http://www.w3.org/1999/xhtml">
     <Page id="page" title="{i18n>title}">
-        <content />
+        <content >
+        <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Books" persistencyKey="SmartFilter_Explored"/>
+		<smartTable:SmartTable id="_IDGenSmartTable1" entitySet="Books" smartFilterId="smartFilterBar"
+			tableType="ResponsiveTable" useExportToExcel="true" beforeExport="onBeforeExport"
+			useVariantManagement="true" useTablePersonalisation="true" header="Books"
+			showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
+			demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="false" editTogglable="true"/>
+        </content>
     </Page>
 </mvc:View>

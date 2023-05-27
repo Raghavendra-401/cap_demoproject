@@ -9,9 +9,9 @@
         <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Books" persistencyKey="SmartFilter_Explored"/>
 		<smartTable:SmartTable id="_IDGenSmartTable1" entitySet="Books" smartFilterId="smartFilterBar"
 			tableType="ResponsiveTable" useExportToExcel="true" beforeExport="onBeforeExport"
-			useVariantManagement="true" useTablePersonalisation="true" header="Line Items"
+			useVariantManagement="true" useTablePersonalisation="true" header="Books"
 			showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
-			demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true"/>
+			demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="false" editTogglable="true"/>
         </content>
     </Page>
 </mvc:View>
