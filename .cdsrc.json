@@ -1,1 +1,20 @@
-{}
+{
+    "[development]": {
+        "auth":{
+            "passport" : {
+                "users" : {
+                    "book.viewer@abc.com" : {
+                        "roles":[
+                            "BookViewer"
+                        ]
+                    },
+                    "book.manager@abc.com" : {
+                        "roles" :[
+                            "BookManager"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
