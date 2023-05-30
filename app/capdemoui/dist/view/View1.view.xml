@@ -11,7 +11,7 @@
 			tableType="ResponsiveTable" useExportToExcel="true" beforeExport="onBeforeExport"
 			useVariantManagement="true" useTablePersonalisation="true" header="Books"
 			showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true"
-			demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="false" editTogglable="true"/>
+			demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true"/>
         </content>
     </Page>
 </mvc:View>

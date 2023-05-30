@@ -1,5 +1,5 @@
-ID;title;author;price;stock
-1;Wuthering Heights;Rayson;399;100
-2;Jane Eyre;Eclipse;399;500
-3;Mind Yours;Gotham;199;240
-4;Don't be Foolish;Ben Shark;299;400
+ID;title;author;price;stock;status
+1;Wuthering Heights;Rayson;399;100;1
+2;Jane Eyre;Eclipse;399;500;1
+3;Mind Yours;Gotham;199;240;1
+4;Don't be Foolish;Ben Shark;299;400;1

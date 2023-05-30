@@ -25,6 +25,11 @@ annotate CatalogService.Books with @(UI: {
         {
             Label: stock,
             Value: stock
+        },
+        {
+            Label      : status,
+            Value      : status,
+            Criticality: status
         }
     ],
 });
@@ -35,4 +40,5 @@ annotate CatalogService.Books with {
     author @(title: '{i18n>author}');
     price  @(title: '{i18n>price}');
     stock  @(title: '{i18n>stock}');
+    status @(title: '{i18n>status}');
 };

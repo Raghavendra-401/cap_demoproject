@@ -33,10 +33,11 @@
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
-                    "semanticObject": "CAPMDemo",
+                    "semanticObject": "Books",
                     "action": "display",
-                    "title": "Demo Project",
-                    "subTitle": "CAPM Demo App",
+                    "title": "{{appTitle}}",
+                    "info": "{{appTitle}}",
+                    "subTitle": "{{appSubTitle}}",
                     "icon": "sap-icon://visits"
                 }
             }
