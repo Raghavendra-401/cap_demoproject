@@ -1,0 +1,16 @@
+### GET BOOKS
+GET http://localhost:4004/catalog/Books
+Authorization: Basic book.manager@abc.com:
+
+### POST BOOKS
+POST http://localhost:4004/catalog/Books 
+Content-Type: application/json
+Authorization: Basic book.manager@abc.com:
+
+{
+    "ID" : 10,
+    "title":"May Time",
+    "author":"Eclipse",
+    "price":"149",
+    "stock":150
+}

@@ -2,12 +2,12 @@ const cds = require('@sap/cds');
 
 module.exports = cds.service.impl(async function(){
     this.after('READ','Books',req => {
-        req.forEach(ID => {
-            if(ID.stock >= 200){
-                ID.status = 3;
+        for(var i=0;i<req.length;i++){
+            if(req[i].stock <= 250){
+                req[i].status = 1;
             }else{
-                ID.status = 2;
+                req[i].status = 3;
             }
-        });;
+        }
     })
 });
