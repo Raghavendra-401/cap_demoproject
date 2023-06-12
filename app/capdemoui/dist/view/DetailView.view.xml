@@ -1,0 +1,21 @@
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="cap.demo.capdemoui.controller.DetailView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page id="pageDetail" title="DetailView">
+        <content>
+            <form:SimpleForm id="simpleForm">
+                <form:content>
+                   <Label id="_IDGenLabel1" text="ID"/>
+                   <Text id="_IDGenText1" text="{ID}"/>
+                   <Label id="_IDGenLabel2" text="Title"/>
+                   <Text id="_IDGenText2" text="{title}"/>
+                   <Label id="_IDGenLabel3" text="Author"/>
+                   <Text id="_IDGenText3" text="{author}"/>
+                   <Label id="_IDGenLabel4" text="Price"/>
+                   <Text id="_IDGenText4" text="{price}"/>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,1 +1,1 @@
-sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("cap.demo.capdemoui.controller.View1",{onInit:function(){}})});
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("cap.demo.capdemoui.controller.View1",{onInit:function(){},onNavigationPress:function(e){var t=this.getOwnerComponent().getRouter();t.navTo("DetailView",{ID:e.getSource().getBindingContext().getObject().ID})}})});

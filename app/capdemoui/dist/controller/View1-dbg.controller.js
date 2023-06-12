@@ -10,6 +10,10 @@ sap.ui.define([
         return Controller.extend("cap.demo.capdemoui.controller.View1", {
             onInit: function () {
 
+            },
+            onNavigationPress: function (oEvent) {
+                var oRouter = this.getOwnerComponent().getRouter();
+                oRouter.navTo("DetailView",{ID :oEvent.getSource().getBindingContext().getObject().ID});
             }
         });
     });
