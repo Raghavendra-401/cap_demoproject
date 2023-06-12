@@ -120,6 +120,11 @@
                     "target": [
                         "TargetView1"
                     ]
+                },
+                {
+                    "name":"DetailView",
+                    "pattern": "DetailView/{ID}",
+                    "target":"TargetView2"
                 }
             ],
             "targets": {
@@ -129,6 +134,13 @@
                     "clearControlAggregation": false,
                     "viewId": "View1",
                     "viewName": "View1"
+                },
+                "TargetView2" :{
+                    "viewType": "XML",
+                    "viewId": "View2",
+                    "viewName": "DetailView",
+                    "transition":"slide",
+                    "clearControlAggregation": false
                 }
             }
         },

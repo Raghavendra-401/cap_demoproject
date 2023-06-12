@@ -8,7 +8,7 @@ Content-Type: application/json
 Authorization: Basic book.manager@abc.com:
 
 {
-    "ID" : 10,
+    "ID" : "10",
     "title":"May Time",
     "author":"Eclipse",
     "price":"149",
