@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form">
+    <VBox class="sapUiSmallMargin">
+        <f:SimpleForm id="idEditForm" editable="true" layout="ResponsiveGridLayout" title="Book Details" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+            <f:content>
+                <Label  text="ID"/>
+                <Input  value="{ID}" editable="{oDataModel>/saveButton}"/>
+                <Label  text="Title"/>
+                <Input  value="{title}" editable="{oDataModel>/saveButton}"/>
+                <Label  text="Author"/>
+                <Input  value="{author}" editable="{oDataModel>/saveButton}"/>
+                <Label  text="Price"/>
+                <Input  value="{price}" editable="{oDataModel>/saveButton}"/>
+            </f:content>
+        </f:SimpleForm>
+    </VBox>
+</core:FragmentDefinition>
