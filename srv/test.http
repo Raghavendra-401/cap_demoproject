@@ -1,16 +1,30 @@
 ### GET BOOKS
 GET http://localhost:4004/catalog/Books
-Authorization: Basic book.manager@abc.com:
+Authorization: basic booksmanager@sap.com:
 
 ### POST BOOKS
 POST http://localhost:4004/catalog/Books 
 Content-Type: application/json
-Authorization: Basic book.manager@abc.com:
+Authorization: basic booksmanager@sap.com:
 
 {
     "ID" : "10",
     "title":"May Time",
     "author":"Eclipse",
     "price":"149",
-    "stock":150
+    "stock":50,
+    "status":0
+}
+
+### UPDATE REQUEST
+PUT http://localhost:4004/catalog/Books/9
+Content-Type: application/json
+Authorization: basic booksmanager@sap.com:
+
+{
+    "title":"May Time",
+    "author":"Eclipse",
+    "price":"149",
+    "stock":50,
+    "status":1
 }

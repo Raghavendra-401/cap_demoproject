@@ -27,7 +27,22 @@
   },
   "cds": {
     "requires": {
-      "db": "hana-cloud"
+      "db": "hana-cloud",
+      "auth": {
+        "kind": "basic",
+        "users": {
+          "booksmanager@sap.com": {
+            "roles": [
+              "BookManager"
+            ]
+          },
+          "booksviewer@sap.com": {
+            "roles": [
+              "BookViewer"
+            ]
+          }
+        }
+      }
     },
     "hana": {
       "deploy-format": "hdbtable"
