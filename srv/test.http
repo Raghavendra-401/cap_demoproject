@@ -2,6 +2,10 @@
 GET http://localhost:4004/catalog/Books
 Authorization: basic booksmanager@sap.com:
 
+###
+GET http://localhost:4004/catalog/Bookstore
+Authorization: basic booksmanager@sap.com:
+
 ### POST BOOKS
 POST http://localhost:4004/catalog/Books 
 Content-Type: application/json

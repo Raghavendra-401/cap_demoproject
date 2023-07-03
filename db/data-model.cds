@@ -8,11 +8,11 @@ entity Books {
       stock  : Integer;
       status : Integer;
       store  : Association to many Bookstore
-                 on store.ID = $self;
+                 on store.name = $self;
 }
 
 entity Bookstore {
-  key ID      : Association to Books;
+  key name      : Association to Books;
       city    : String;
       country : String;
       zipcode : Integer;
