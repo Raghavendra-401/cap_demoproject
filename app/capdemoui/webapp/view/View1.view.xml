@@ -8,7 +8,13 @@
         <content >
             <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Books" persistencyKey="SmartFilter_Explored"/>
             <smartTable:SmartTable id="_IDGenSmartTable1" entitySet="Books" smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Books" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true">
-                <Table id="_IDGenTable1">
+                	<smartTable:customToolbar>
+			            <OverflowToolbar>
+				            <ToolbarSpacer/>
+				            <Button text="Select" press="onColumns"/>
+			            </OverflowToolbar>
+		            </smartTable:customToolbar>
+                <Table id="_IDGenTable1" mode="MultiSelect">
                     <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onNavigationPress"/>
                 </Table>
             </smartTable:SmartTable>

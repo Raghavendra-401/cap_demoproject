@@ -14,6 +14,10 @@ sap.ui.define([
             onNavigationPress: function (oEvent) {
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.navTo("DetailView",{ID :oEvent.getSource().getBindingContext().getObject().ID});
+            },
+            onColumns : function(){
+                    var oSmartTable = this.getView().byId("_IDGenSmartTable1");
+                    var Table = this.getView().byId("_IDGenTable1");
             }
         });
     });
