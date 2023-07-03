@@ -10,7 +10,8 @@ service CatalogService @(requires: 'authenticated-user') {
             grant: ['*'],
             to   : ['BookManager']
         }
-    ]) as projection on my.Books;
+    ])               as projection on my.Books;
 
+    entity Bookstore as projection on my.Bookstore;
     @(requires: 'BookManager') function getTotalCount() returns String;
 }
