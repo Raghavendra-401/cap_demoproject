@@ -10,13 +10,14 @@
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "@sap/hana-client": "^2.16.26",
     "express": "^4",
-    "hdb": "^0.19.0"
+    "hdb": "^0.19.0",
+    "json2csv": "^6.0.0-alpha.2"
   },
   "devDependencies": {
     "@sap/hdi-deploy": "4.6.1",
     "@sap/ux-specification": "^1.108.6",
-    "sqlite3": "^5",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "sqlite3": "^5"
   },
   "scripts": {
     "start": "cds-serve",

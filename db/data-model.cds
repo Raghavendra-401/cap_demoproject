@@ -7,13 +7,13 @@ entity Books {
       price  : String;
       stock  : Integer;
       status : Integer;
-      store  : Association to many Bookstore
-                 on store.name = $self;
+      store  : Association to Bookstore;
 }
 
 entity Bookstore {
-  key name      : Association to Books;
-      city    : String;
-      country : String;
-      zipcode : Integer;
+  name    : Association to many Books
+              on name.store = $self;
+  city    : String;
+  country : String;
+  zipcode : Integer;
 }
