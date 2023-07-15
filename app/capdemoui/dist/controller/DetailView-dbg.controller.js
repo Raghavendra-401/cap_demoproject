@@ -14,7 +14,7 @@ sap.ui.define([
         },
         _onObjectMatched : function(oEvent){
             var sID = oEvent.getParameters().arguments.ID;
-            this.getView().bindElement("/Books(ID='"+sID+"')");
+            this.getView().bindElement("/Books(ID="+sID+")");
         },
         onEdit : function(oEvent){
             this.byId("pageDetail").removeAllContent();

@@ -4,7 +4,7 @@ const { Books } = cds.entities("my.bookshop");
 
 async function data2csv() {
     let jsonData = await cds.run(SELECT.from(Books));
-    const csvData = json2csv(jsonData, { fields: ['ID', 'title', 'author', 'price', 'status', 'stock'] });
+    const csvData = json2csv(jsonData, { fields: ['ID', 'title', 'author', 'price', 'review', 'stock'] });
     return csvData;
 }
 

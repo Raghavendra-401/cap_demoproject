@@ -7,10 +7,6 @@ annotate CatalogService.Books with @(UI: {
     ],
     LineItem       : [
         {
-            Label: ID,
-            Value: ID
-        },
-        {
             Label: title,
             Value: title
         },
@@ -27,10 +23,9 @@ annotate CatalogService.Books with @(UI: {
             Value: stock
         },
         {
-            Label      : status,
-            Value      : status,
-            Criticality: status
-        }
+            Label: review,
+            Value: review
+        },
     ],
 });
 
@@ -40,5 +35,5 @@ annotate CatalogService.Books with {
     author @(title: '{i18n>author}');
     price  @(title: '{i18n>price}');
     stock  @(title: '{i18n>stock}');
-    status @(title: '{i18n>status}');
+    review @(title: '{i18n>review}');
 };

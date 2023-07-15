@@ -3,13 +3,35 @@
     xmlns="sap.m"
     xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
     xmlns:smartTable="sap.ui.comp.smarttable"
-    xmlns:html="http://www.w3.org/1999/xhtml">
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
-        <content >
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Books" persistencyKey="SmartFilter_Explored"/>
-            <smartTable:SmartTable id="_IDGenSmartTable1" entitySet="Books" smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Books" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true">
-                <Table id="_IDGenTable1">
-                    <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onNavigationPress"/>
+        <content>
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Books" persistencyKey="SmartFilter_Explored" />
+            <smartTable:SmartTable id="_IDGenSmartTable1" entitySet="Books" smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="true"  beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Books" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true">
+                <smartTable:customToolbar>
+                    <OverflowToolbar id="_IDGenOverflowToolbar1">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <Button id="_IDGenButton1" text="Select" press="onColumns" />
+                    </OverflowToolbar>
+                </smartTable:customToolbar>
+                <Table id="_IDGenTable1" mode="MultiSelect">
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem1" type="Navigation" press="onNavigationPress" />
+                    </items>
+                    <!-- <columns>
+                        <Column id="ExtraColumn" hAlign="Begin">
+                            <customData>
+                                <core:CustomData id="_IDGenCustomData1" key="p13nData" value='\{"columnKey": "status", "columnIndex": 6, "leadingProperty": "status", "sortProperty": "status"}' />
+                            </customData>
+                            <Text id="_IDGenText1" text="Status" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem2" type="Navigation" press="onNavigationPress">
+                                <ObjectStatus id="_IDGenObjectStatus1" text="{status}" />
+                        </ColumnListItem>
+                    </items> -->
                 </Table>
             </smartTable:SmartTable>
         </content>

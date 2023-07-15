@@ -1,19 +1,30 @@
 namespace my.bookshop;
 
-entity Books {
-  key ID     : String(10);
-      title  : String;
-      author : String;
-      price  : String;
-      stock  : Integer;
-      status : Integer;
-      store  : Association to Bookstore;
+using {
+  cuid,
+  managed
+} from '@sap/cds/common';
+
+type Rating : String enum {
+  Poor;
+  Average;
+  Good;
+  Excellent;
+};
+
+entity Books : cuid, managed {
+  title  : String;
+  author : String;
+  price  : String;
+  stock  : Integer;
+  review : Rating;
+  store  : Composition of many Bookstore
+             on store.name = $self;
 }
 
-entity Bookstore {
-  name    : Association to many Books
-              on name.store = $self;
-  city    : String;
-  country : String;
-  zipcode : Integer;
+entity Bookstore : cuid {
+  key name    : Association to Books;
+      city    : String;
+      country : String;
+      zipcode : Integer;
 }

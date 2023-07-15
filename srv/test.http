@@ -12,23 +12,27 @@ Content-Type: application/json
 Authorization: basic booksmanager@sap.com:
 
 {
-    "ID" : "10",
+    "ID" : "84391478-2154-11ee-be56-0242ac120002",
     "title":"May Time",
     "author":"Eclipse",
     "price":"149",
     "stock":50,
-    "status":0
+    "review":"Good"
 }
 
 ### UPDATE REQUEST
-PUT http://localhost:4004/catalog/Books/9
+PUT http://localhost:4004/catalog/Books/e4957825-ddcd-47a0-9f55-0a7fde1f4249
 Content-Type: application/json
 Authorization: basic booksmanager@sap.com:
 
 {
-    "title":"May Time",
+    "title":"Summer Break",
     "author":"Eclipse",
     "price":"149",
     "stock":50,
-    "status":1
+    "review":"Excellent"
 }
+
+###DELETE
+DELETE http://localhost:4004/catalog/Books/84391478-2154-11ee-be56-0242ac120002
+Authorization: basic booksmanager@sap.com:
