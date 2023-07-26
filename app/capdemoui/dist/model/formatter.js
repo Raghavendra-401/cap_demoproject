@@ -1,0 +1,1 @@
+sap.ui.define(function(){return{reviewStatus:function(e){if(e=="Excellent"){return sap.ui.core.ValueState.Success}else{return sap.ui.core.ValueState.Error}}}});

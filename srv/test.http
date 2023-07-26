@@ -30,7 +30,12 @@ Authorization: basic booksmanager@sap.com:
     "author":"Eclipse",
     "price":"149",
     "stock":50,
-    "review":"Excellent"
+    "review":"Excellent",
+    "store":[{
+        "city":"Bengaluru",
+        "country": "Bharath",
+        "zipcode": 560037
+    }]
 }
 
 ###DELETE

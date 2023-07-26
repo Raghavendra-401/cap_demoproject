@@ -23,8 +23,8 @@ entity Books : cuid, managed {
 }
 
 entity Bookstore : cuid {
-  key name    : Association to Books;
+  key name    : Association to one Books;
       city    : String;
       country : String;
-      zipcode : Integer;
+      zipcode : Decimal(6,0);
 }

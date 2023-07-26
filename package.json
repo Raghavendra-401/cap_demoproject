@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.3.0",
     "@sap/cds": "^6",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "@sap/hana-client": "^2.16.26",
@@ -15,7 +16,7 @@
   },
   "devDependencies": {
     "@sap/hdi-deploy": "4.6.1",
-    "@sap/ux-specification": "^1.108.6",
+    "@sap/ux-specification": "^1.108.10",
     "rimraf": "^3.0.2",
     "sqlite3": "^5"
   },
@@ -24,13 +25,14 @@
     "watch-capdemoui": "cds watch --open capdemoui/webapp/index.html?sap-ui-xx-viewCache=false",
     "undeploy": "cf undeploy cap_demoproject --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-fileuplo": "cds watch --open fileuplo/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
       "db": "hana-cloud",
       "auth": {
-        "[development]":{
+        "[development]": {
           "kind": "basic",
           "users": {
             "booksmanager@sap.com": {
@@ -43,6 +45,22 @@
                 "BookViewer"
               ]
             }
+          }
+        }
+      },
+      "ECPersonalInformation": {
+        "kind": "odata-v2",
+        "model": "srv/external/ECPersonalInformation",
+        "[development]": {
+          "credentials": {
+            "requestTimeout": 30000,
+            "url": "https://sandbox.api.sap.com/successfactors/odata/v2",
+            "authentication": "NoAuthentication"
+          }
+        },
+        "[production]": {
+          "credentials": {
+            "destination": "SFExternalService"
           }
         }
       }

@@ -1,13 +1,15 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "../model/formatter"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller) {
+    function (Controller,formatter) {
         "use strict";
 
         return Controller.extend("cap.demo.capdemoui.controller.View1", {
+            formatter: formatter,
             onInit: function () {
 
             },
