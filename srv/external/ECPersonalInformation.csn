@@ -1,6 +1,6 @@
 {
   "meta": {
-    "creator": "cds-dk 6.8.3"
+    "creator": "cds-dk 6.8.2"
   },
   "$version": "2.0",
   "definitions": {
@@ -602,7 +602,7 @@
     "ECPersonalInformation.PerPersonal": {
       "kind": "entity",
       "@cds.external": true,
-      "@cds.persistence.skip": true,
+      "@cds.persistence.skip": false,
       "@sap.label": "Personal Information",
       "@sap.creatable": "false",
       "@sap.updatable": "false",

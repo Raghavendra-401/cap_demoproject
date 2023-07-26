@@ -26,5 +26,5 @@ entity Bookstore : cuid {
   key name    : Association to one Books;
       city    : String;
       country : String;
-      zipcode : Decimal(6,0);
+      zipcode : Integer;
 }

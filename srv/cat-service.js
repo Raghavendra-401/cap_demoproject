@@ -2,43 +2,37 @@ const cds = require('@sap/cds');
 const common = require('./lib/common');
 const { Books } = cds.entities("my.bookshop");
 
-module.exports = cds.service.impl(async function (srv) {
-    const { PerPersonal } = srv.entities;
-    const extAPI = await cds.connect.to("ECpersonalInformation");
+module.exports = cds.service.impl(async function () {
 
-    srv.on("READ", PerPersonal, async (req) => {
+  this.on("getTotalCount", async function () {
+    let totalStock = await common.getBooksCount();
+    console.log(`Total Books Count is ${totalStock}`);
+    return `Total Books Count is ${totalStock}`;
+  });
 
-        /*
-        let PerPersonalQuery = SELECT.from(req.query.SELECT.from).limit(
-          req.query.SELECT.limit
-        );
-        if (req.query.SELECT.where) {
-          PerPersonalQuery.where(req.query.SELECT.where);
-        }
-        if (req.query.SELECT.orderBy) {
-          PerPersonalQuery.orderBy(req.query.SELECT.orderBy);
-        }
-        */
+  this.on("getBooksCsvData", async function () {
+    let csvData = await common.data2csv();
+    return csvData;
+  });
 
-        let extData = await extAPI.tx(req).send({
-          query: req.query,
-          headers: {
-            APIKey: process.env.APIKey,
-          },
-        });
-        return extData;
-      });
+  this.on("READ", "SFPersonal", async (req) => {
+    const sfExternalAPI = await cds.connect.to('ECPersonalInformation');
 
-    srv.on("getTotalCount", async function () {
-        let totalStock = await common.getBooksCount();
-        console.log(`Total Books Count is ${totalStock}`);
-        return `Total Books Count is ${totalStock}`;
+    let extData = await sfExternalAPI.tx(req).send({
+      query: req.query,
+      headers: {
+        APIKey: process.env.APIKey,
+      },
     });
+    return extData;
+  });
 
-    srv.on("getBooksCsvData", async function () {
-        let csvData = await common.data2csv();
-        return csvData;
+  this.on("READ", "PersonDetails", async (req, res) => {
+    const northwindDest = await cds.connect.to('Northwind');
+
+    let personDetails = await northwindDest.send({
+      query: req.query
     });
-
+  });
 
 });
