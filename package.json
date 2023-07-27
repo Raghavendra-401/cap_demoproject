@@ -52,14 +52,14 @@
         "kind": "odata-v2",
         "model": "srv/external/ECPersonalInformation",
         "credentials": {
-         "url":"https://sandbox.api.sap.com/successfactors/odata/v2"
+          "url": "https://sandbox.api.sap.com/successfactors/odata/v2"
         }
       },
       "Northwind": {
         "kind": "odata",
         "model": "srv/external/Northwind",
-        "credentials":{
-        "destination" :"NorthWind"
+        "credentials": {
+          "url": "https://services.odata.org/V3/Northwind/Northwind.svc/"
         }
       }
     },

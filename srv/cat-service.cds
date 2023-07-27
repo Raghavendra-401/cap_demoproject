@@ -28,5 +28,5 @@ service CatalogService @(requires: 'authenticated-user') {
             key startDate
         from external.PerPersonal;
 
-    entity PersonDetails as select from externalNorthwind.PersonDetails;
+    entity Customers as select from externalNorthwind.Customers;
 }

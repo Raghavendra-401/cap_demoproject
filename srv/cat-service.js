@@ -16,23 +16,30 @@ module.exports = cds.service.impl(async function () {
   });
 
   this.on("READ", "SFPersonal", async (req) => {
-    const sfExternalAPI = await cds.connect.to('ECPersonalInformation');
-
-    let extData = await sfExternalAPI.tx(req).send({
-      query: req.query,
-      headers: {
-        APIKey: process.env.APIKey,
-      },
-    });
-    return extData;
+    try {
+      const sfExternalAPI = await cds.connect.to('ECPersonalInformation');
+      let extData = await sfExternalAPI.tx(req).send({
+        query: req.query,
+        headers: {
+          APIKey: process.env.APIKey,
+        },
+      });
+      return extData;
+    } catch (error) {
+      req.error('500', error);
+    }
   });
 
-  this.on("READ", "PersonDetails", async (req, res) => {
-    const northwindDest = await cds.connect.to('Northwind');
+  this.on("READ", "Customers", async (req, res) => {
+    try {
+      const northwindDest = await cds.connect.to('Northwind');
 
-    let personDetails = await northwindDest.send({
-      query: req.query
-    });
+      let customers = await northwindDest.send({
+        query: req.query
+      });
+      return customers;
+    } catch (error) {
+      req.error('500', error);
+    }
   });
-
 });
