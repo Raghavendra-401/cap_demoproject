@@ -12,7 +12,7 @@
     "@sap/hana-client": "^2.16.26",
     "express": "^4",
     "hdb": "^0.19.0",
-    "json2csv": "^6.0.0-alpha.2"
+    "json-2-csv": "^4.0.0"
   },
   "devDependencies": {
     "@sap/hdi-deploy": "4.6.1",
@@ -59,7 +59,7 @@
         "kind": "odata",
         "model": "srv/external/Northwind",
         "credentials": {
-          "destination":"NorthWind"
+          "destination": "NorthWind"
         }
       }
     },

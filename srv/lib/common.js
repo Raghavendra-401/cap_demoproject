@@ -1,10 +1,10 @@
 const cds = require('@sap/cds');
-const json2csv = require('json2csv').parse;
+const json2Csv = require('json-2-csv');
 const { Books } = cds.entities("my.bookshop");
 
-async function data2csv() {
-    let jsonData = await cds.run(SELECT.from(Books));
-    const csvData = json2csv(jsonData, { fields: ['ID', 'title', 'author', 'price', 'review', 'stock'] });
+async function data2csv(ID) {
+    let jsonData = await cds.run(SELECT.from(Books).where`ID=${ID}`);
+    const csvData = json2Csv.json2csv(jsonData, { keys: ['ID', 'title', 'author', 'price', 'review', 'stock'] });
     return csvData;
 }
 

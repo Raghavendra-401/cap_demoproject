@@ -16,7 +16,7 @@ service CatalogService @(requires: 'authenticated-user') {
 
     entity Bookstore  as projection on my.Bookstore;
     @(requires: 'BookManager') function getTotalCount()   returns String;
-    function                            getBooksCsvData() returns String;
+    function                            getBooksCsvData(ID:String) returns String;
 
     entity SFPersonal as
         select

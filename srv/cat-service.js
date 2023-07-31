@@ -10,8 +10,8 @@ module.exports = cds.service.impl(async function () {
     return `Total Books Count is ${totalStock}`;
   });
 
-  this.on("getBooksCsvData", async function () {
-    let csvData = await common.data2csv();
+  this.on("getBooksCsvData", async req => {
+    let csvData = await common.data2csv(req.data.ID);
     return csvData;
   });
 
