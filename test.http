@@ -41,3 +41,19 @@ Authorization: basic booksmanager@sap.com:
 ###DELETE
 DELETE http://localhost:4004/catalog/Books/84391478-2154-11ee-be56-0242ac120002
 Authorization: basic booksmanager@sap.com:
+
+###Books Store
+POST http://localhost:4004/catalog/Bookstore
+Content-Type: application/json
+Authorization: basic booksmanager@sap.com:
+
+{
+   "name_ID":"84391478-2154-11ee-be56-0242ac120002",
+   "city":"Bengaluru",
+   "country": "Bharath",
+   "zipcode": 560037 
+}
+
+### GET BOOKS with Books store
+GET http://localhost:4004/catalog/Books?$expand=store
+Authorization: basic booksmanager@sap.com:
