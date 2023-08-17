@@ -32,18 +32,6 @@
                             <ObjectStatus id="_IDGenObjectStatus1" text="{review}" state="{path: 'review', formatter: '.formatter.reviewStatus'}"/>
                         </ColumnListItem>
                     </items> -->
-                    <columns>
-                        <Column>
-                            <Label text="Author Name - Book"/>
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem>
-                            <cells>
-                                <ObjectIdentifier text="{author} -- {title}"/>
-                            </cells>
-                        </ColumnListItem>
-                    </items>
                 </Table>
             </smartTable:SmartTable>
         </content>

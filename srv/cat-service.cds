@@ -1,6 +1,6 @@
 using my.bookshop as my from '../db/data-model';
 using {ECPersonalInformation as external} from './external/ECPersonalInformation';
-using { Northwind as externalNorthwind } from './external/Northwind';
+using {Northwind as externalNorthwind} from './external/Northwind';
 
 service CatalogService @(requires: 'authenticated-user') {
     entity Books @(restrict: [
@@ -15,8 +15,9 @@ service CatalogService @(requires: 'authenticated-user') {
     ])                as projection on my.Books;
 
     entity Bookstore  as projection on my.Bookstore;
-    @(requires: 'BookManager') function getTotalCount()   returns String;
-    function                            getBooksCsvData(ID:String) returns String;
+    @(requires: 'BookManager') function getTotalCount()              returns String;
+    function                            getBooksCsvData(ID : String) returns String;
+    function                            useCfenv()                   returns String;
 
     entity SFPersonal as
         select
@@ -28,5 +29,5 @@ service CatalogService @(requires: 'authenticated-user') {
             key startDate
         from external.PerPersonal;
 
-    entity Customers as select from externalNorthwind.Customers;
+    entity Customers  as select from externalNorthwind.Customers;
 }

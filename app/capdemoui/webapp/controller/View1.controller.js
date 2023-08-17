@@ -11,7 +11,10 @@ sap.ui.define([
         return Controller.extend("cap.demo.capdemoui.controller.View1", {
             formatter: formatter,
             onInit: function () {
-
+                jQuery.ajax({
+                   method:"GET",
+                   url:""
+                });
             },
             onNavigationPress: function (oEvent) {
                 var oRouter = this.getOwnerComponent().getRouter();

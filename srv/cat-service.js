@@ -1,4 +1,5 @@
 const cds = require('@sap/cds');
+const cfenv = require('cfenv');
 const common = require('./lib/common');
 const { Books } = cds.entities("my.bookshop");
 
@@ -42,4 +43,10 @@ module.exports = cds.service.impl(async function () {
       req.error('500', error);
     }
   });
+
+  this.on("useCfenv", async (req) => {
+    const cfService = cfenv.getAppEnv();
+    cfDestinationCred = cfService.getService(process.env.cf_Destination).credentials;
+    cfXsuaaCred = cfService.getService(process.env.cf_xsuaa).credentials;
+  })
 });
